@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lineup</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+        <script src="code.js"></script>
+    </head>
+    <body onload="load()">
+        <div class=container>
+            <input placeholder="Add to your list..." id=new>
+            <button id=add onclick="add()">
+                <span id=plus>+</span>
+            </button>
+        </div>
+        <div id=active class=container>
+        </div>
+        <div id=completed class=container>
+        </div>
+    </body>
+</html>

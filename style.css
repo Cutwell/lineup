@@ -1,0 +1,80 @@
+button:focus, input:focus{
+    outline: none;
+}
+#plus {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bolder;
+}
+#add {
+	width: 10%;
+    border: none;
+	padding: 12px 20px;
+	font-size: 15px;
+	transition-duration: 0.4s;
+	background-color: #fff;
+    color: #303030;
+    border: 2px solid #C0C0C0;
+}
+#add:hover {
+	background-color: #F5F5F5;
+}
+#add:active {
+	transition-duration: 0.1s;
+	background-color: #C0C0C0;
+}
+#new {
+	width: 85%;
+    padding: 12px 20px;
+    margin: 8px 0;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+.container {
+    max-width: 34em;
+	margin: 0 auto;
+	font-size: 20px;
+	font-family: Baskerville, Georgia, serif;
+}
+.strikethrough:before, .strikethroughalways:before {
+	content: ' ';
+	display: block;
+}
+.strikethroughalways {
+	color: #808080;
+	cursor: default;
+}
+.strikethrough {
+	transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
+	cursor: pointer;
+}
+.strikethroughalways, .strikethrough {
+	line-height: 1.5em;
+	display: inline;
+	position: relative;
+	margin: 12px 20px;
+}
+.strikethroughalways:after {
+    background: #808080;
+}
+.strikethrough:hover:after {
+	background: #000;
+}
+.strikethrough:hover:after, .strikethroughalways:after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 2px;
+	margin-top: -0.7em;
+	transform-origin: center left;
+	animation: strikethrough 1s cubic-bezier(.55, 0, .1, 1) 1;
+    transition: transform cubic-bezier(.55, 0, .1, 1);
+}
+@keyframes strikethrough {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
