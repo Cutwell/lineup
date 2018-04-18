@@ -16,6 +16,7 @@ if (typeof(Storage) !== "undefined") {
     alert("No support for local storage! Try checking your settings or using a more updated browser.");
 }
 function load() {
+    document.getElementById("menudropdown").style.display = "none";
     var active = document.getElementById("active");
     Sortable.create(active, {});
     document.getElementById("new").addEventListener("keyup", function(event) {

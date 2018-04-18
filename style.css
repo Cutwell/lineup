@@ -48,7 +48,7 @@ button:focus, input:focus{
 	font-size: 12px;
 }
 #menudropdown {
-	display: "none";
+	display: none;
 	position: absolute;
 	right: 0;
 	top: 56px;
