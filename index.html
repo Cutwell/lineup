@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang=en manifest=app.manifest>
     <head>
-        <meta charset="utf-8">
+        <meta charset=utf-8>
         <title>Lineup</title>
         <link rel=icon type=image/png href=favicon.png>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+        <meta name=viewport content=width=device-width, initial-scale=1>
+        <link rel=stylesheet type=text/css media=screen href=style.css />
 
-        <script src="https://rubaxa.github.io/Sortable/Sortable.js"></script>
-        <script src="code.js"></script>
+        <script src=Sortable.min.js></script>
+        <script src=code.js></script>
     </head>
     <body onload="load()">
         <button id=menu onclick=togglemenu()>≡</button>
@@ -19,7 +19,7 @@
         </div>
         <div class=container>
             <input placeholder="Add to your list..." id=new>
-            <button id=add onclick="add()">
+            <button id=add onclick=add()>
                 <span id=plus>+</span>
             </button>
         </div>
