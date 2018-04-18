@@ -5,31 +5,21 @@ button:focus, input:focus{
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-weight: bolder;
 }
-#menu, #add, .menuitem {
+#add {
 	border: none;
-	padding: 12px 20px;
+	padding: 13px 20px;
 	transition-duration: 0.4s;
 	background-color: #fff;
     color: #303030;
 	cursor: pointer;
-}
-#menu {
-	position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 24px;
-	height: 56px;
-	width: 56px;
-}
-#add {
 	width: 10%;
 	font-size: 15px;
-	border: 2px solid #C0C0C0;
+	border: 1px solid #C0C0C0;
 }
-#add:hover, #menu:hover, .menuitem:hover {
+#add:hover {
 	background-color: #F5F5F5;
 }
-#add:active, #menu:active, .menuitem:active {
+#add:active {
 	transition-duration: 0.1s;
 	background-color: #C0C0C0;
 }
@@ -39,26 +29,6 @@ button:focus, input:focus{
     margin: 8px 0;
 	box-sizing: border-box;
 	font-size: 16px;
-}
-#code, #help {
-	font-family: 'Courier New', Courier, monospace;
-	font-weight: bolder;
-}
-#help {
-	font-size: 12px;
-}
-#menudropdown {
-	display: none;
-	position: absolute;
-	right: 0;
-	top: 56px;
-	height: 168px;
-	width: 56px;
-}
-.menuitem {
-	height: 56px;
-	width: 56px;
-	display: block;
 }
 .container {
     max-width: 34em;
