@@ -5,20 +5,31 @@ button:focus, input:focus{
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-weight: bolder;
 }
-#add {
-	width: 10%;
-    border: none;
+#menu, #add, .menuitem {
+	border: none;
 	padding: 12px 20px;
-	font-size: 15px;
 	transition-duration: 0.4s;
 	background-color: #fff;
     color: #303030;
-    border: 2px solid #C0C0C0;
+	cursor: pointer;
 }
-#add:hover {
+#menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 24px;
+	height: 56px;
+	width: 56px;
+}
+#add {
+	width: 10%;
+	font-size: 15px;
+	border: 2px solid #C0C0C0;
+}
+#add:hover, #menu:hover, .menuitem:hover {
 	background-color: #F5F5F5;
 }
-#add:active {
+#add:active, #menu:active, .menuitem:active {
 	transition-duration: 0.1s;
 	background-color: #C0C0C0;
 }
@@ -28,6 +39,26 @@ button:focus, input:focus{
     margin: 8px 0;
 	box-sizing: border-box;
 	font-size: 16px;
+}
+#code, #help {
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bolder;
+}
+#help {
+	font-size: 12px;
+}
+#menudropdown {
+	display: "none";
+	position: absolute;
+	right: 0;
+	top: 56px;
+	height: 168px;
+	width: 56px;
+}
+.menuitem {
+	height: 56px;
+	width: 56px;
+	display: block;
 }
 .container {
     max-width: 34em;
@@ -41,23 +72,28 @@ button:focus, input:focus{
 }
 .strikethroughalways {
 	color: #808080;
-	cursor: default;
 }
 .strikethrough {
 	transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
-	cursor: pointer;
+}
+.strikethrough:hover {
+	transition-duration: 0.01;
+	color: #606060;
 }
 .strikethroughalways, .strikethrough {
 	line-height: 1.5em;
 	display: inline;
 	position: relative;
 	margin: 12px 20px;
+	cursor: pointer;
 }
 .strikethroughalways:after {
-    background: #808080;
+	background: #808080;
+	animation: strikethrough 0s cubic-bezier(.55, 0, .1, 1) 1;
 }
 .strikethrough:hover:after {
-	background: #000;
+	background: #606060;
+	animation: strikethrough 1s cubic-bezier(.55, 0, .1, 1) 1;
 }
 .strikethrough:hover:after, .strikethroughalways:after {
 	content: '';
@@ -67,8 +103,10 @@ button:focus, input:focus{
 	height: 2px;
 	margin-top: -0.7em;
 	transform-origin: center left;
-	animation: strikethrough 1s cubic-bezier(.55, 0, .1, 1) 1;
     transition: transform cubic-bezier(.55, 0, .1, 1);
+}
+.strikethroughalways:hover {
+	color: #a9a9a9;
 }
 @keyframes strikethrough {
 	from {

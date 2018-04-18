@@ -6,18 +6,25 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+        <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
         <script src="code.js"></script>
     </head>
     <body onload="load()">
+        <button id=menu onclick=togglemenu()>≡</button>
+        <div id=menudropdown>
+            <button id=help onclick=window.location.href='https://cutwell.github.io/lineup/README.pdf' class=menuitem>i</button>
+            <button id=code onclick=window.location.href='https://github.com/Cutwell/lineup' class=menuitem><\></button>
+        </div>
         <div class=container>
             <input placeholder="Add to your list..." id=new>
             <button id=add onclick="add()">
                 <span id=plus>+</span>
             </button>
         </div>
-        <div id=active class=container>
-        </div>
-        <div id=completed class=container>
-        </div>
+        <ul id=active class=container>
+        </ul>
+        <ul id=completed class=container>
+        </ul>
     </body>
 </html>
