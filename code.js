@@ -1,22 +1,21 @@
 if (typeof(Storage) !== "undefined") {
     var local = localStorage.todo;
     if(local == undefined || local == "") {
-        localStorage.todo = "Add an item!,";
-        local = "Add an item!,"
+        localStorage.todo = "Add an item!___SEPARATOR___";
+        local = "Add an item!___SEPARATOR___"
     }
-    var todo = local.split(",");
+    var todo = local.split("___SEPARATOR___");
     todo = todo.filter(function(element) {
         return element !== "";
     });
     if(todo == []) {
-        localStorage.todo = "Add an item!,";
+        localStorage.todo = "Add an item!___SEPARATOR___";
         todo = ["Add an item!",]
     }
 } else {
     alert("No support for local storage! Try checking your settings or using a more updated browser.");
 }
 function load() {
-    document.getElementById("menudropdown").style.display = "none";
     var active = document.getElementById("active");
     Sortable.create(active, {});
     document.getElementById("new").addEventListener("keyup", function(event) {
@@ -32,7 +31,7 @@ function load() {
     });
 }
 function save() {
-    var save = todo.toString();
+    var save = todo.join("___SEPARATOR___");
     localStorage.todo = save;
 }
 function complete(el) {
@@ -53,8 +52,8 @@ function add() {
         todo.push(input.value);
         list.insertAdjacentHTML('beforeend', "<li onclick=complete(event) ondrag=drag(event) ondragend=release(event) class=strikethrough>"+input.value+"</li>");
         input.value = "";
+        save();
     }
-    save();
 }
 function undo(el) {
     var item = el.target;
@@ -83,11 +82,3 @@ function release(el) {
     todo = new_order;
     save();
 }
-function togglemenu() {
-    var menudropdown = document.getElementById("menudropdown");
-    if (menudropdown.style.display === "none") {
-        menudropdown.style.display = "block";
-    } else {
-        menudropdown.style.display = "none";
-    }
-} 
