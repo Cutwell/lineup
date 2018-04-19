@@ -21,3 +21,7 @@ Accidently cross out a task? No Worries! Clicking a completed task will uncomple
 Need to prioritise certain tasks? Drag any item to reorder it!
 
 ![#5](https://i.imgur.com/rNxv8Xg.png)
+
+What if you need to delete an item RIGHT NOW? Got you covered, simply drag it to the ```✗``` in the top left corner!
+
+![#6](https://i.imgur.com/YotJwkg.png)

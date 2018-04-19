@@ -16,8 +16,27 @@ if (typeof(Storage) !== "undefined") {
     alert("No support for local storage! Try checking your settings or using a more updated browser.");
 }
 function load() {
+    document.getElementById("delete").style.display = "none";
     var active = document.getElementById("active");
-    Sortable.create(active, {});
+    var remove = document.getElementById("delete");
+    Sortable.create(active, {
+        group: "draggable",
+        onStart: function(evt) {
+            document.getElementById("delete").style.display = "block";
+        },
+        onEnd: function(evt) {
+            document.getElementById("delete").style.display = "none";
+        },
+    });
+    Sortable.create(remove, {
+        group: "draggable",
+        onAdd: function(evt) {
+            var toDelete = document.getElementById("delete");
+            toDelete.innerHTML = '✗';
+            toDelete.style.display = "none";
+            save();
+        },
+    });
     document.getElementById("new").addEventListener("keyup", function(event) {
         // Number 13 is the "Enter" key on the keyboard
         if (event.keyCode === 13) {
