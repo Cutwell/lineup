@@ -19,7 +19,17 @@ function load() {
     document.getElementById("delete").style.display = "none";
     var active = document.getElementById("active");
     var remove = document.getElementById("delete");
+    var completed = document.getElementById("completed");
     Sortable.create(active, {
+        group: "draggable",
+        onStart: function(evt) {
+            document.getElementById("delete").style.display = "block";
+        },
+        onEnd: function(evt) {
+            document.getElementById("delete").style.display = "none";
+        },
+    });
+    Sortable.create(completed, {
         group: "draggable",
         onStart: function(evt) {
             document.getElementById("delete").style.display = "block";
